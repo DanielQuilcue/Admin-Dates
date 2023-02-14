@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Formulario = () => {
+const Formulario = ({ pacientes, setPacientes }) => {
 
   const [nombre, setNombre] = useState('')
   const [propietario, setPropietario] = useState('')
@@ -20,8 +20,25 @@ const Formulario = () => {
       return;
     }
     setError(false)
+
+    // Objeto de paciente
+    const objectoPaciente  = {
+      nombre,
+      propietario,
+      email,
+      fecha,
+      sintomas
+    }
+    setPacientes([...pacientes, objectoPaciente]); //Objecto inmutable
+
+    // Reinicar formulario
+    setNombre('')
+    setPropietario('')
+    setEmail('')
+    setFecha('')
+    setSintomas('')
   }
-  console.log(nombre)
+  // console.log(nombre)
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-5">
       <h1 className="font-black text-3xl text-center mb-10">
