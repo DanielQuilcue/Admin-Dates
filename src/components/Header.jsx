@@ -1,8 +1,8 @@
-function Header(props) {
+function Header() {
   return (
     <h1 className="font-black text-5xl text-center md:w-1/2 mx-auto">
       Seguimiento Pacientes {''}
-      <span className="text-indigo-600">Veterinaria</span>
+      <span className="text-violet-600">Veterinaria</span>
     </h1>
   )
 }
